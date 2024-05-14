@@ -26,7 +26,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          target: test
+          target: swapnil-mahmud/test-repo:latest
           load: true
       -
         name: Build and push
