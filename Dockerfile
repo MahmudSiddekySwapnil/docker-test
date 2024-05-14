@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 FROM composer:lts as deps
-WORKDIR /src/
+WORKDIR /app
 RUN --mount=type=bind,source=composer.json,target=composer.json \
     --mount=type=bind,source=composer.lock,target=composer.lock \
     --mount=type=cache,target=/tmp/cache \
