@@ -1,6 +1,14 @@
 # syntax=docker/dockerfile:1
 FROM composer:lts as deps
 WORKDIR /app
+# Stage 1: Build and test
+FROM base_image AS test
+# commands for building and testing
+
+# Stage 2: Final build
+FROM base_image AS final
+# commands for finalizing the build
+
 RUN --mount=type=bind,source=composer.json,target=composer.json \
     --mount=type=bind,source=composer.lock,target=composer.lock \
     --mount=type=cache,target=/tmp/cache \
